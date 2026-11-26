@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afaq Haider — personal portfolio, skills, education and cooking products.">
+  <title>Afaq Haider | Personal Website & Cooking Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#174c3c;--green2:#236b51;--cream:#faf8f1;--ink:#1d2924;--muted:#68746d;--gold:#d7a84b;--white:#fff;--line:#e8e7df;--shadow:0 18px 55px rgba(25,55,42,.10)}
+    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.65}
+    a{text-decoration:none;color:inherit}.container{width:min(1140px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(250,248,241,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:1.35rem;font-weight:800;color:var(--green);letter-spacing:-.7px}.brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:25px;align-items:center;font-size:.92rem;font-weight:600}.navlinks a:hover{color:var(--green2)}
+    .menu{display:none;background:none;border:0;font-size:1.7rem;color:var(--green);cursor:pointer}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 21px;font-weight:700;cursor:pointer;transition:.2s}
+    .btn-primary{background:var(--green);color:white}.btn-primary:hover{background:var(--green2);transform:translateY(-2px)}
+    .btn-outline{border:1px solid var(--green);color:var(--green);background:transparent}.btn-outline:hover{background:#edf3ee}
+    .hero{padding:86px 0 78px;background:radial-gradient(circle at 85% 20%,#e7eadb 0,transparent 28%),linear-gradient(120deg,#f8f6ed,#f0f3e9)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+    .eyebrow{display:inline-block;color:var(--green2);background:#e7eee5;padding:7px 13px;border-radius:99px;font-size:.8rem;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:clamp(2.6rem,5vw,4.6rem);line-height:1.08;letter-spacing:-2.5px;margin:19px 0}.hero h1 span{color:var(--green2)}
+    .hero p{color:var(--muted);font-size:1.08rem;max-width:590px;margin-bottom:27px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{background:var(--green);color:white;padding:35px;border-radius:28px;box-shadow:var(--shadow);position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end}
+    .hero-card:before{content:"";position:absolute;width:240px;height:240px;border:1px solid #ffffff35;border-radius:50%;top:-85px;right:-55px;box-shadow:0 0 0 25px #ffffff0b,0 0 0 50px #ffffff08}
+    .monogram{font-size:5.5rem;line-height:1;font-weight:800;color:#ffffff22;position:absolute;top:28px;left:30px;letter-spacing:-8px}
+    .hero-card h2{font-size:1.8rem;position:relative}.hero-card p{color:#d6e3da;margin:8px 0 0;font-size:.95rem;position:relative}
+    section{padding:82px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 42px}.section-head .eyebrow{margin-bottom:12px}
+    h2.section-title{font-size:clamp(2rem,3vw,2.8rem);line-height:1.15;letter-spacing:-1px}.section-head p{color:var(--muted);margin-top:12px}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}
+    .about-art{min-height:310px;border-radius:25px;background:linear-gradient(145deg,#dfe9dc,#f0e7d2);display:grid;place-items:center;color:var(--green);font-size:6rem}
+    .about-copy h3{font-size:1.65rem;margin-bottom:12px}.about-copy p{color:var(--muted);margin-bottom:14px}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.chip{padding:8px 13px;background:#e9eee6;color:var(--green);border-radius:99px;font-size:.85rem;font-weight:700}
+    .details{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}
+    .detail{padding:22px;background:white;border:1px solid var(--line);border-radius:18px}.detail .icon{font-size:1.5rem}.detail h4{margin:8px 0 4px}.detail p{font-size:.9rem;color:var(--muted)}
+    #shop{background:#f0f2eb}.shop-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.shop-top .section-head{text-align:left;margin:0}
+    .cart-pill{background:white;border:1px solid var(--line);padding:10px 15px;border-radius:99px;font-weight:700;color:var(--green);white-space:nowrap}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s}.product:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .product-art{height:185px;background:linear-gradient(135deg,#e6eadc,#f4ead7);display:grid;place-items:center;font-size:4.5rem}
+    .product-info{padding:20px}.product-info h3{font-size:1.08rem}.product-info p{font-size:.9rem;color:var(--muted);min-height:48px;margin:7px 0 14px}
+    .product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}.price{font-weight:800;color:var(--green);font-size:1.08rem}
+    .add{border:0;background:var(--green);color:white;border-radius:99px;padding:9px 14px;font-weight:700;cursor:pointer}.add:hover{background:var(--green2)}
+    .note{font-size:.85rem;color:var(--muted);margin-top:20px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}.contact-panel{background:var(--green);color:white;border-radius:24px;padding:32px}.contact-panel p{color:#d8e4dc;margin:10px 0 22px}
+    .contact-line{padding:12px 0;border-top:1px solid #ffffff30}.contact-line strong{display:block;font-size:.82rem;color:#d4dfd7}
+    form{background:white;border:1px solid var(--line);border-radius:24px;padding:30px;display:grid;gap:14px}
+    label{font-weight:700;font-size:.88rem}input,textarea{width:100%;padding:13px 14px;border:1px solid #dfe3dc;border-radius:12px;font:inherit;background:#fcfcfa;outline:none}input:focus,textarea:focus{border-color:var(--green2)}textarea{min-height:115px;resize:vertical}
+    footer{background:#102f25;color:#dce7df;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.88rem}
+    .toast{position:fixed;bottom:22px;right:22px;background:#173f32;color:white;padding:13px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.25s;pointer-events:none;z-index:50}.toast.show{opacity:1;transform:translateY(0)}
+    .urdu{font-family:"Noto Nastaliq Urdu",serif}
+    @media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--cream);padding:20px 5%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding:60px 0}.hero-card{min-height:260px}.products{grid-template-columns:repeat(2,1fr)}.details{grid-template-columns:1fr 1fr}.shop-top{align-items:center}}
+    @media(max-width:520px){section{padding:62px 0}.products,.details{grid-template-columns:1fr}.shop-top{align-items:flex-start;flex-direction:column}.product-art{height:160px}.hero h1{letter-spacing:-1.5px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">AFAQ<span>.</span></a>
+      <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#home">Home</a><a href="#about">About Me</a><a href="#education">Education</a><a href="#hobbies">Hobbies</a><a href="#shop">My Store</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary nav-cta" href="#shop">Explore Store</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Welcome to my personal space</span>
+        <h1>Hello, I'm<br><span>Afaq Haider.</span></h1>
+        <p>I'm from Mureed Village, Chakwal, Pakistan. This is my personal website where I share my journey, education, interests and the cooking products I offer.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#about">Discover My Story →</a><a class="btn btn-outline" href="#shop">Visit My Store</a></div>
+      </div>
+      <div class="hero-card"><div class="monogram">AH</div><h2>Welcome!</h2><p>Learning • Creating • Growing</p><p class="urdu" style="font-size:1.15rem;margin-top:18px">خوش آمدید — میری ویب سائٹ پر آپ کا استقبال ہے</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">A little about me</span><h2 class="section-title">My Story</h2><p>A place to introduce yourself and let visitors know what matters to you.</p></div>
+      <div class="about-grid">
+        <div class="about-art">🌿</div>
+        <div class="about-copy"><h3>Assalam-o-Alaikum!</h3>
+          <p>My name is <strong>Afaq Haider</strong>, and I live in <strong>Mureed Village, Chakwal</strong>. I believe in learning new things, improving my skills and turning good ideas into reality.</p>
+          <p>On this website, you can learn more about me, explore my interests and browse my cooking products. Thank you for visiting!</p>
+          <div class="chips"><span class="chip">Chakwal, Pakistan</span><span class="chip">Personal Portfolio</span><span class="chip">Cooking Store</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" style="background:#fff">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">My background</span><h2 class="section-title">Education & Skills</h2><p>Replace the sample text below with your real qualifications and skills.</p></div>
+      <div class="details">
+        <article class="detail"><div class="icon">🎓</div><h4>My Education</h4><p>Add your school, college/university, class or degree, and year here.</p></article>
+        <article class="detail"><div class="icon">💡</div><h4>My Skills</h4><p>Write about your computer skills, communication, business or other abilities.</p></article>
+        <article class="detail"><div class="icon">🚀</div><h4>My Goals</h4><p>Share what you want to achieve in your studies, career and personal life.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">What I enjoy</span><h2 class="section-title">My Hobbies & Interests</h2><p>These are example categories — edit them to match your own interests.</p></div>
+      <div class="details">
+        <article class="detail"><div class="icon">🍳</div><h4>Cooking</h4><p>Trying recipes, exploring flavours and learning about food products.</p></article>
+        <article class="detail"><div class="icon">📚</div><h4>Learning</h4><p>Discovering useful ideas and building knowledge every day.</p></article>
+        <article class="detail"><div class="icon">💻</div><h4>Technology</h4><p>Exploring digital tools, websites and creative projects.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="container">
+      <div class="shop-top">
+        <div class="section-head"><span class="eyebrow">Afaq's collection</span><h2 class="section-title">Cooking Products Store</h2><p>Browse the sample products below. Change names, prices and descriptions to your real products.</p></div>
+        <div class="cart-pill">🛒 Cart: <span id="cartCount">0</span></div>
+      </div>
+      <div class="products" id="products">
+        <article class="product"><div class="product-art">🫙</div><div class="product-info"><h3>Homemade Spice Mix</h3><p>A flavourful spice mix for everyday cooking. Sample listing.</p><div class="product-bottom"><span class="price">Rs. 450</span><button class="add" data-name="Homemade Spice Mix" data-price="450">Add to cart</button></div></div></article>
+        <article class="product"><div class="product-art">🌶️</div><div class="product-info"><h3>Red Chilli Powder</h3><p>Freshly packed chilli powder. Sample listing.</p><div class="product-bottom"><span class="price">Rs. 300</span><button class="add" data-name="Red Chilli Powder" data-price="300">Add to cart</button></div></div></article>
+        <article class="product"><div class="product-art">🥣</div><div class="product-info"><h3>Special Cooking Masala</h3><p>A versatile masala blend for delicious meals. Sample listing.</p><div class="product-bottom"><span class="price">Rs. 500</span><button class="add" data-name="Special Cooking Masala" data-price="500">Add to cart</button></div></div></article>
+      </div>
+      <p class="note">Note: Product names, prices and descriptions are demo content. Update them before publishing. Checkout sends an order request through WhatsApp; it does not process online payments.</p>
+      <div style="text-align:center;margin-top:25px"><button class="btn btn-primary" id="checkout">Checkout on WhatsApp →</button></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Let's connect</span><h2 class="section-title">Contact Me</h2><p>Have a question about me or a product? Send a message.</p></div>
+      <div class="contact-grid">
+        <div class="contact-panel"><h3>Get in touch</h3><p>I'd be happy to hear from you. Update the sample contact details with your own.</p>
+          <div class="contact-line"><strong>LOCATION</strong>Mureed Village, Chakwal, Pakistan</div>
+          <div class="contact-line"><strong>EMAIL</strong>your-email@example.com</div>
+          <div class="contact-line"><strong>WHATSAPP</strong>+92 3XX XXXXXXX</div>
+        </div>
+        <form id="contactForm"><div><label for="name">Your name</label><input id="name" required placeholder="Enter your name"></div><div><label for="email">Email address</label><input id="email" type="email" required placeholder="you@example.com"></div><div><label for="message">Message</label><textarea id="message" required placeholder="Write your message..."></textarea></div><button class="btn btn-primary" type="submit">Prepare Email →</button><p class="note">This opens your email app; connect a form service if you want messages saved automatically.</p></form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Afaq Haider. All rights reserved.</span><span>Made with care in Chakwal, Pakistan.</span><a href="#home">Back to top ↑</a></div></footer>
+<div class="toast" id="toast">Added to cart!</div>
+
+<script>
+  // IMPORTANT: Replace this with your WhatsApp number in international format, without + or spaces.
+  const WHATSAPP_NUMBER = "923XXXXXXXXX";
+  let cart = [];
+  const count = document.getElementById("cartCount");
+  const toast = document.getElementById("toast");
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.getElementById("menuBtn").addEventListener("click", () => {
+    document.getElementById("navlinks").classList.toggle("open");
+  });
+  document.querySelectorAll("#navlinks a").forEach(a => a.addEventListener("click", () => {
+    document.getElementById("navlinks").classList.remove("open");
+  }));
+
+  document.querySelectorAll(".add").forEach(button => {
+    button.addEventListener("click", () => {
+      cart.push({name: button.dataset.name, price: Number(button.dataset.price)});
+      count.textContent = cart.length;
+      toast.textContent = button.dataset.name + " added to cart!";
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1800);
+    });
+  });
+
+  document.getElementById("checkout").addEventListener("click", () => {
+    if (!cart.length) { alert("Your cart is empty. Please add a product first."); return; }
+    if (WHATSAPP_NUMBER.includes("X")) { alert("Please add your WhatsApp number in the HTML code first."); return; }
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const lines = cart.map((item, i) => `${i + 1}. ${item.name} - Rs. ${item.price}`);
+    const message = `Assalam-o-Alaikum Afaq! I want to place an order:\n${lines.join("\n")}\n\nTotal: Rs. ${total}`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const subject = encodeURIComponent("Website message from " + name);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+  });
+</script>
+</body>
+</html>
